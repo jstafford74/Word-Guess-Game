@@ -3,32 +3,72 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Word Guess Game</title>
+
+
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
+
+    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 
 
+    <script src="assets/Javascript/game.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script type="text/javascript"> src="assets/Javascript/game.js"</script>
-
 </head>
 
-<div class="wrapper">
-    <h1>Word Guess Game</h1>
-    <h2>Some Call it Hangman</h2>
-    <p>Use the alphabet below to guess the word, or click hint to get a clue. </p>
-</div>
-<div class="wrapper">
-    <div id="buttons">
-    </div>
-    <p id="levelName"></p>
-    <div id="hold">
-    </div>
+<div class="jumbotron">
+    <h1>Word Guest Game</h1>
 
-    <div class="container">
-        <button id="reset">Play again</button>
+    <h1>Use the alphabet below to guess the word, or click hint to get a clue. </h3>
+</div>
+<div class="container-fluid padding" id="level">
+    <div class="row text-center padding">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-blind"></i>
+            <br>
+            <button type="button" class="btn btn-primary">Basic</button>
+            <h3>Basic</h3>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-dragon"></i>
+            <br>
+            <button type="button" class="btn btn-warning">Intermediate</button>
+            <h3>Intermediate</h3>
+        </div>
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <i class="fas fa-brain"></i>
+            <br>
+            <button type="button" class="btn btn-success">Advanced</button>
+            <h3>Advanced</h3>
+        </div>
     </div>
+    <hr class="my-4">
+</div>
+<div class="container" id="level">
+    <h2>Pick a Level</h2>
+    <div class="row">
+        <div class="col-4">
+
+
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row" id="buttons">
+    </div>
+</div>
+<p id="levelName"></p>
+<div id="hold">
+</div>
+
+<div class="container">
+    <button id="reset">Play again</button>
+</div>
 </div>

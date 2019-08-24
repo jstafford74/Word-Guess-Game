@@ -16,31 +16,32 @@ window.onload = function () {
 
     var showLevel = document.getElementById("level");
 
-    // create alphabet ul
+    // create alphabet buttons
     var buttons = function () {
         myButtons = document.getElementById('buttons');
-        letters = document.createElement('ul');
-
+        letters = document.createElement('div');
+         letters.setAttribute("id","alphabet");
         for (var i = 0; i < alphabet.length; i++) {
-            letters.id = 'alphabet';
-            list = document.createElement('li');
+            list = document.createElement('button');
+            list.setAttribute("type","button");
+            list.setAttribute("class","col-2 btn btn-dark");
             list.id = 'letter';
-            list.innerHTML = alphabet[i];
+            list.innerHTML = alphabet[i].toUpperCase();
             check();
             myButtons.appendChild(letters);
             letters.appendChild(list);
         }
-    }
+    };
 
 
     // Select Catagory
     var selectLev = function () {
         if (curLevel === level[0]) {
             levelName.innerHTML = "Basic";
-        } else if (cueLevel === level[1]) {
+        } else if (curLevel === level[1]) {
             levelName.innerHTML = "Intermediate";
         } else if (curLevel === level[2]) {
-            LevelName.innerHTML = "Advanced";
+            levelName.innerHTML = "Advanced";
         }
     }
 
@@ -117,7 +118,7 @@ window.onload = function () {
         correct.parentNode.removeChild(correct);
         letters.parentNode.removeChild(letters);
         play();
-    }
-}
+    };
+};
 
 

@@ -1,12 +1,16 @@
 
 
 body {
-  background-color:blue;
+  background-color:#ffffff;
   font-family:  Arial, "Lucida Grande", sans-serif; 
   color:white;
   height:100%;
   text-align:center;
   font-size:18px;
+}
+
+.jumbotron{
+  background-color:black;
 }
 
 .wrappper{
@@ -19,42 +23,21 @@ body {
 
 
 h1, h2, h3 {
-    font-family:  Arial, "Lucida Grande", sans-serif;
-	font-weight: 100;
+  font-family: 'Lexend Tera', sans-serif;
+	
 	text-transform: uppercase;
-    margin:5px 0;
+  margin:5px 0;
 }
 
-h1 {
-	font-size: 2.6em;
+
+
+#letter {
+  font-family: 'Lexend Tera', sans-serif;
+  font-size: 20px
+  
 }
 
-h2 {
-	font-size: 1.6em;
-}
 
-p{
-  font-size: 1.6em;
-}
-
-#alphabet {
-  margin:15px auto;
-  padding:0;
-  max-width:900px;
-}
-
-#alphabet li {
-  float:left;
-  margin: 0 10px 10px 0;
-  list-style:none;
-  width:35px;
-  height:30px;
-  padding-top:10px;
-  background:white;
-  color:blue;
-  cursor:pointer;
-  border: solid 1px white;
-}  
   #alphabet li:hover {
       background-color: blue;
       border: solid 1px black;
@@ -93,19 +76,7 @@ p{
   display:block;
 }
 
-button{
-  
-  background:green;
-  color:black;
-  border: solid 1px gray;
-  text-decoration:none;
-  cursor:pointer;
-  font-size:1.2em;
-  padding:18px 10px;
-  width:180px;
-  margin: 10px;
-  outline: none;
-} 
+
     button:hover{
       opacity: .5;
       background:white;
