@@ -39,85 +39,86 @@ window.onload = function () {
 
     var basic = document.getElementById("bas");
     basic.onclick = function () {
-        word = grade[0][Math.floor(Math.random() * 14)];
-        // hide = word.replace(/\s/g, "-");
-        console.log(word);
+        var word = grade[0][Math.floor(Math.random() * 14)];
+        var wordl = word.length;
+        correct = document.createElement('div');
+        var listb = document.getElementById('letter');
+        listb.onclick = function () {
+            var guess = (this.innerHTML);
+            this.setAttribute("class", "active");
+            this.onclick = null;
+            for (var i = 0; i < wordl; i++) {
+                if (word[i] === guess) {
+                    guesses[i].innerHTML = guess;
+                    counter += 1;
+                }
+            }
+        };
+        for (var i = 0; i < wordl; i++) {
+            correct.setAttribute('id', 'my-word');
+            correct.setAttribute('class','row');
+            guess = document.createElement('div');
+            guess.setAttribute('class', 'col-3');
+            if (word[i] === "-") {
+                guess.innerHTML = "-";
+                space = 1;
+            }
+            else {
+                guess.innerHTML = "_";
+            }
+            wordHolder = document.getElementById('hold');
+            guesses.push(guess);
+            wordHolder.appendChild(correct);
+            correct.appendChild(guess);
+        }
+
     };
+
     var inter = document.getElementById("int");
     inter.onclick = function () {
-        word = grade[1][Math.floor(Math.random() * 14)];
-        // hide = word.replace(/\s/g, "-");
-        console.log(word);
+        var word = grade[1][Math.floor(Math.random() * 14)];
+        var wordl = word.length;
+        correct = document.createElement('ul');
+        for (var i = 0; i < wordl; i++) {
+            correct.setAttribute('class','row');
+            guess = document.createElement('div');
+            guess.setAttribute('class', 'col-3');
+            if (word[i] === "-") {
+                guess.innerHTML = "-";
+                space = 1;
+            }
+            else {
+                guess.innerHTML = "_";
+            }
+            wordHolder = document.getElementById('hold');
+
+            guesses.push(guess);
+            wordHolder.appendChild(correct);
+            correct.appendChild(guess);
+        }
+
     };
     var advan = document.getElementById("adv");
     advan.onclick = function () {
-        word = grade[2][Math.floor(Math.random() * 13)];
-        // hide = word.replace(/\s/g, "-");
-        console.log(word);
-    };
-
-
-
-
-    // lvlget();
-    // Create guesses ul
-    result = function () {
-        wordHolder = document.getElementById('hold');
+        var word = grade[2][Math.floor(Math.random() * 13)];
+        var wordl = word.length;
         correct = document.createElement('ul');
-
-        for (var i = 0; i < word.length; i++) {
-            correct.setAttribute('id', 'my-word');
-            guess = document.createElement('li');
-            guess.setAttribute('class', 'guess');
+        for (var i = 0; i < wordl; i++) {
+            correct.setAttribute('class','row');
+            guess = document.createElement('div');
+            guess.setAttribute('class', 'col-3');
             if (word[i] === "-") {
                 guess.innerHTML = "-";
                 space = 1;
             } else {
                 guess.innerHTML = "_";
             }
+            wordHolder = document.getElementById('hold');
 
             guesses.push(guess);
             wordHolder.appendChild(correct);
             correct.appendChild(guess);
         }
     };
-    result();
-
-    // // OnClick Function
-    // check = function () {
-    //     list.onclick = function () {
-    //         var guess = (this.innerHTML);
-    //         this.setAttribute("class", "active");
-    //         this.onclick = null;
-    //         for (var i = 0; i < word.length; i++) {
-    //             if (word[i] === guess) {
-    //                 guesses[i].innerHTML = guess;
-    //                 counter += 1;
-    //             }
-    //         }
-
-    //     };
-
-    // };
-
-
-    // Play
-
-
-
-
-
-
-
-
-
-    // Reset
-
-    // document.getElementById('reset').onclick = function () {
-    //     correct.parentNode.removeChild(correct);
-    //     letters.parentNode.removeChild(letters);
-    //     play();
 
 };
-
-
