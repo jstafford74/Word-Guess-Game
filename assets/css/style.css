@@ -12,7 +12,20 @@ body {
 .jumbotron{
   background-color:black;
 }
+hr.style4{
+  border-top: 1px solid red;
+  
+}
+hr.style3{
+  border-top: 1px solid royalblue;
+  
+}
 
+i{
+  height: 50px;
+  width:50px;
+  color:black;
+}
 .wrappper{
   
   width:100%;

@@ -5,60 +5,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Word Guess Game</title>
-
-
-    <link rel="stylesheet" href="assets/css/reset.css">
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-
-    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap" rel="stylesheet">
-
+      <link href="https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
+  
 
+  
+    <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
 
-    <script src="assets/Javascript/game.js"></script>
+    <script src="https://kit.fontawesome.com/fee8a4f90f.js"></script>    <script src="assets/Javascript/game.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 </head>
 
 <div class="jumbotron">
-    <h1>Word Guest Game</h1>
-
-    <h1>Use the alphabet below to guess the word, or click hint to get a clue. </h3>
+    <h1 class="display-1">Word Guess Game</h1>
+    <hr class="style4">
+    <h1 class="display-4">Select Your level</h1>
+    <hr class="style3">
+    <h1 class="display-4">Use the alphabet below to guess the word</h1>
 </div>
 <div class="container-fluid padding" id="level">
     <div class="row text-center padding">
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-blind"></i>
+                <span style="font-size: 2em;">
+            <i class="fas fa-blind fa-3x" style="color:rgba(25, 66, 201, 0.767);padding-right:66px;"></i>
+            </span>
             <br>
-            <button type="button" class="btn btn-primary">Basic</button>
+            <button type="button" class="btn btn-primary" id="bas">Basic</button>
             <h3>Basic</h3>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-dragon"></i>
+                <span style="font-size: 2em;">
+            <i class="fas fa-dragon fa-3x" style="color:rgba(199, 150, 15, 0.767);padding-right:123px;"></i>
+            </span>
             <br>
-            <button type="button" class="btn btn-warning">Intermediate</button>
+            
+            <button type="button" class="btn btn-xlg btn-warning" id="int">Intermediate</button>
             <h3>Intermediate</h3>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-4">
-            <i class="fas fa-brain"></i>
+                <span style="font-size: 2em;">
+            <i class="fas fa-brain fa-3x" style="color:rgba(13, 124, 10, 0.767);padding-right:111px;"></i>
+            </span>
             <br>
-            <button type="button" class="btn btn-success">Advanced</button>
+            <button type="button" class="btn btn-success" id="adv">Advanced</button>
             <h3>Advanced</h3>
         </div>
     </div>
     <hr class="my-4">
-</div>
-<div class="container" id="level">
-    <h2>Pick a Level</h2>
-    <div class="row">
-        <div class="col-4">
-
-
-        </div>
-    </div>
 </div>
 <div class="container">
     <div class="row" id="buttons">
