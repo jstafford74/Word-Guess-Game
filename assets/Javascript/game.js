@@ -37,32 +37,40 @@ window.onload = function () {
     ];
     //Level Selection
 
-    var basic = document.querySelector('bas');
-    var inter = document.querySelector('int');
-    var advan = document.querySelector('adv');
-    var level = [basic, inter, advan];
-    var wordl = word.length;
+    // var basic = document.querySelector('bas');
+    // var inter = document.querySelector('int');
+    // var advan = document.querySelector('adv');
+    var level = document.getElementsByClassName("level");
+  
+    debugger;
 
-    level.onclick = function () {
-        switch (level) {
-            case 'bas':
-                var word = grade[0][Math.floor(Math.random() * 14)];
-                // return word;
-                console.log(word + wordl);
-                break;
-            case 'int':
-                var word = grade[1][Math.floor(Math.random() * 14)];
-                // return word;
-                console.log(word + wordl);
-                break;
-            case 'adv':
-                var word = grade[2][Math.floor(Math.random() * 13)];
-                // return word;
-                console.log(word + wordl);
-                break;
-        }
-    };
-debugger;
+    level.addEventListener("click", function () {
+        var selLevel = this.getAttribute("id");
+        console.log(selLevel);
+        // switch (level) {
+        //     case 'bas':
+        //         var word = grade[0][Math.floor(Math.random() * 14)];
+        //         // return word;
+        //         var wordl = word.length;
+        //         console.log(word + wordl);
+        //         break;
+        //     case 'int':
+        //         var word = grade[1][Math.floor(Math.random() * 14)];
+        //         // return word;
+        //         var wordl = word.length;
+        //         console.log(word + wordl);
+        //         break;
+        //     case 'adv':
+        //         var word = grade[2][Math.floor(Math.random() * 13)];
+        //         // return word;
+        //         var wordl = word.length;
+        //         console.log(word + wordl);
+        //         break;
+        // }
+    });
+
+    
+// debugger;
 
     correct = document.createElement('div');
     for (var i = 0; i < wordl; i++) {
@@ -77,22 +85,22 @@ debugger;
     wordHolder = document.getElementById('hold');
     guesses.push(guess);
     wordHolder.appendChild(correct);
-    correct.appendChild(guess);}
+    correct.appendChild(guess);
 
 
 
-var listb = document.getElementById('letter');
-listb.onclick = function () {
-    var guess = (this.innerHTML);
-    this.setAttribute("class", "active");
-    this.onclick = null;
-    for (var i = 0; i < wordl; i++) {
-        if (word[i] === guess) {
-            guesses[i].innerHTML = guess;
-            counter += 1;
-        }
-    }
+// var listb = document.getElementById('letter');
+// listb.onclick = function () {
+//     var guess = (this.innerHTML);
+//     this.setAttribute("class", "active");
+//     this.onclick = null;
+//     for (var i = 0; i < wordl; i++) {
+//         if (word[i] === guess) {
+//             guesses[i].innerHTML = guess;
+//             counter += 1;
+//         }
+//     }
+
 };
-
 
 
