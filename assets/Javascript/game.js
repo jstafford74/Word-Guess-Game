@@ -1,4 +1,3 @@
-window.onload = function () {
 
     var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
@@ -41,8 +40,8 @@ window.onload = function () {
     // var inter = document.querySelector('int');
     // var advan = document.querySelector('adv');
     var level = document.getElementsByClassName("level");
-  
-    debugger;
+
+ 
 
     level.addEventListener("click", function () {
         var selLevel = this.getAttribute("id");
@@ -70,7 +69,7 @@ window.onload = function () {
     });
 
     
-// debugger;
+
 
     correct = document.createElement('div');
     for (var i = 0; i < wordl; i++) {
@@ -101,6 +100,6 @@ window.onload = function () {
 //         }
 //     }
 
-};
+
 
 
