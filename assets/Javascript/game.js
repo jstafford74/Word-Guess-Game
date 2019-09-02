@@ -3,12 +3,17 @@
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
 
-    var grade;              // Player chooses level of difficulty 
-    var word;               // Selected word
-    var guess;              // User's Guess
-    var guesses = [];       // Stored guesses
-    var counter;            // Count correct guesses
-    var space;              // Number of spaces in word '-'
+    var grade = [];
+    var level = document.getElementsByClassName("level");              // Player chooses level of difficulty 
+    var chosenWord = "";         // Selected word
+    var letters = [];            // Letters in chosen word
+    var numBlanks = 0;           // Number of blanks to show
+    var curState = [];           // Number of right guesses and blanks left
+    var guess = "";              // User's Guess
+    var wrongGuesses = [];       // Stored guesses
+    var winCounter;              // Count correct guesses
+    var lossCounter;             // Count wrong guesses
+    var space;                   // Number of spaces in word '-'
 
 
     // create alphabet buttons
@@ -28,24 +33,53 @@
     };
     buttons();
 
-    // Select Level
-    grade = [
-        ["hat", "bet", "bear", "blue", "flab", "crib", "stump", "made", "frame", "grape", "track", "stand", "want", "chalk", "track"],
-        ["sharks", "sharp", "arctic", "born", "forward", "form", "forest", "apron", "music", "replied", "began", "anthill", "daylight", "handstand", "sunrise"],
-        ["conflicts", "examples", "helpful", "imagine", "plans", "printed", "problems", "upset", "echoed", "scrambled", "reeds", "valley", "gully", "clutched"]
-    ];
+    function selectGrade(){
+        grade = [
+            ["hat", "bet", "bear", "blue", "flab", "crib", "stump", "made", "frame", "grape", "track", "stand", "want", "chalk", "track"],
+            ["sharks", "sharp", "arctic", "born", "forward", "form", "forest", "apron", "music", "replied", "began", "anthill", "daylight", "handstand", "sunrise"],
+            ["conflicts", "examples", "helpful", "imagine", "plans", "printed", "problems", "upset", "echoed", "scrambled", "reeds", "valley", "gully", "clutched"]
+        ];
+        
+        level.addEventListener("click", function () {
+        var selLevel = this.getAttribute("id");
+        
+        if (selLevel == 'bas'){
+            grade = grade[0];
+            return grade;
+        }
+        else if (selLevel == 'int'){
+            grade = grade[1];
+            return grade;
+        }
+        else {
+            grade = grade[2];
+            return grade;
+        }
+
+    });
+}
+    
+    function startGame() {
+        chosenWord = grade[Math.floor(Math.random() * grade.length)];
+        letters = chosenWord.split("");
+        numBlanks = letters.length;
+        console.log(chosenWord);
+        curState = [];
+        wrongGuesses = [];
+        for (var i = 0; i < numBlanks; i++) {
+        curState.push("_");
+        }
+        console.log(blanksAndSuccesses);
+        // document.getElementById("guesses-left").innerHTML = numGuesses;
+        document.getElementById("hold").innerHTML = curState.join(" ");
+        document.getElementById("guesses").innerHTML = wrongGuesses.join(" ");
+      }      
     //Level Selection
 
     // var basic = document.querySelector('bas');
     // var inter = document.querySelector('int');
     // var advan = document.querySelector('adv');
-    var level = document.getElementsByClassName("level");
-
- 
-
-    level.addEventListener("click", function () {
-        var selLevel = this.getAttribute("id");
-        console.log(selLevel);
+    
         // switch (level) {
         //     case 'bas':
         //         var word = grade[0][Math.floor(Math.random() * 14)];
