@@ -5,75 +5,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Word Guess Game</title>
-      <link href="https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
-  
 
-  
+
+
     <!-- <link rel="stylesheet" href="assets/css/reset.css"> -->
 
-    <script src="https://kit.fontawesome.com/fee8a4f90f.js"></script>    <script src="assets/Javascript/game.js"></script>
+    <script src="https://kit.fontawesome.com/fee8a4f90f.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
 </head>
 
-<div class="jumbotron">
-    <h1 class="display-1">Word Guess Game</h1>
-    <hr class="style4">
-    <h1 class="display-4">Select Your level</h1>
-    <hr class="style3">
-    <h1 class="display-4">Use the alphabet below to guess the word</h1>
-</div>
-<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+<body>
+    <div class="jumbotron">
+        <h1 class="display-1">Word Guess Game</h1>
+        <hr class="style4">
+        <h1 class="display-4">Select Your level</h1>
+        <hr class="style3">
+        <h1 class="display-4">Use the alphabet below to guess the word</h1>
+    </div>
+    <div class="container-fluid padding">
+        <div class="row text-center padding">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <span style="font-size: 2em;">
-            <i class="fas fa-blind fa-3x" style="color:rgba(25, 66, 201, 0.767);padding-right:66px;"></i>
-            </span>
-            <br>
-            <button type="button" class="btn btn-xlg btn-primary level" id="bas">Basic</button>
-            <h3>Basic</h3>
+                    <i class="fas fa-blind fa-3x" style="color:rgba(25, 66, 201, 0.767);padding-right:66px;"></i>
+                </span>
+                <br>
+                <button type="button" class="btn btn-xlg btn-primary level" id="bas">Basic</button>
+                <h3>Basic</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <span style="font-size: 2em;">
+                    <i class="fas fa-dragon fa-3x" style="color:rgba(199, 150, 15, 0.767);padding-right:123px;"></i>
+                </span>
+                <br>
+
+                <button type="button" class="btn btn-xlg btn-warning level" id="int">Intermediate</button>
+                <h3>Intermediate</h3>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+                <span style="font-size: 2em;">
+                    <i class="fas fa-brain fa-3x" style="color:rgba(13, 124, 10, 0.767);padding-right:111px;"></i>
+                </span>
+                <br>
+                <button type="button" class="btn btn-xlg btn-success level" id="adv">Advanced</button>
+                <h3>Advanced</h3>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-                <span style="font-size: 2em;">
-            <i class="fas fa-dragon fa-3x" style="color:rgba(199, 150, 15, 0.767);padding-right:123px;"></i>
-            </span>
-            <br>
-            
-            <button type="button" class="btn btn-xlg btn-warning level" id="int">Intermediate</button>
-            <h3>Intermediate</h3>
+        <hr class="my-4">
+    </div>
+    <div class="jumbotron" style="background-color:navajowhite">
+        <div class="row">
+            <div class="col-6">
+                <div class="card card-default">
+                    <div class="card-header">
+                        <h3 class="card-title"><strong>Word to Guess</strong></h3>
+                    </div>
+                    <div class="card-body">
+                        <h3 id="hold">_ _ _ _ _ _ _ _ _ </h3>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-body">
+                        <strong>Guesses: </strong> <span id="guesses"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <strong>Wins: </strong> <span id="win-counter">0</span>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-body">
+                        <strong>Losses: </strong> <span id="loss-counter">0</span>
+                    </div>
+                </div>
+                <div class="card card-default">
+                    <div class="card-body">
+                        <strong>Games: </strong> <span id="games-played">0</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-                <span style="font-size: 2em;">
-            <i class="fas fa-brain fa-3x" style="color:rgba(13, 124, 10, 0.767);padding-right:111px;"></i>
-            </span>
-            <br>
-            <button type="button" class="btn btn-xlg btn-success level" id="adv">Advanced</button>
-            <h3>Advanced</h3>
+        <div class="row">
+            <div class="card-body" id="buttons">
+
+            </div>
         </div>
     </div>
-    <hr class="my-4">
-</div>
-<div class="jumbotron" style="background-color:navajowhite">
-    <div class="row">
-        <div class="col-6" id="hold">
 
-        </div>
-        <div class ="col-6" id="guesses">
-
-        </div>
+    <div class="container">
+        <button id="reset">Play again</button>
     </div>
-</div>
-<div class="container">
-    <div class="row" id="buttons">
-    </div>
-</div>
-<p id="levelName"></p>
-<div id="hold">
-</div>
+    <script src="assets/Javascript/game.js"></script>
+</body>
 
-<div class="container">
-    <button id="reset">Play again</button>
-</div>
-</div>
+</html>
