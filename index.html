@@ -20,11 +20,11 @@
 
 <body>
     <div class="jumbotron">
-        <h1 class="display-1">Word Guess Game</h1>
+        <h1 class="display-1">Word Guess</h1>
         <hr class="style4">
-        <h1 class="display-4">Select Your level</h1>
+        <h1 class="display-4">Select Your Level</h1>
         <hr class="style3">
-        <h1 class="display-4">Use the alphabet below to guess the word</h1>
+        <h1 class="display-4">Select Your Letter</h1>
     </div>
     <div class="container-fluid padding">
         <div class="row text-center padding">
@@ -56,7 +56,16 @@
         </div>
         <hr class="my-4">
     </div>
-    <div class="jumbotron" style="background-color:navajowhite">
+    <div class="jumbotron" style="background-color:navajowhite" id="scoreboard">
+        <div clas="row">
+            <div class="col-12">
+                <div class="card card-default">
+                    <div class="card-body">
+                        <strong>Guesses Left: </strong> <span id="guesses-left">9</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="row">
             <div class="col-6">
                 <div class="card card-default">

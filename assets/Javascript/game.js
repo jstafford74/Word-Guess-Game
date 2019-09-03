@@ -10,6 +10,7 @@ gradeAdvan = ["conflicts", "examples", "helpful", "imagine", "plans", "printed",
 
 // Player chooses level of difficulty 
 var chosenWord = "";         // Selected word
+var wordList = [];
 var lettersCorr = [];        // Letters in chosen word
 var numBlanks = 0;           // Number of blanks to show
 var curState = [];           // Number of right guesses and blanks left
@@ -30,38 +31,56 @@ var buttons = function () {
     for (var i = 0; i < alphabet.length; i++) {
         list = document.createElement('button');
         list.setAttribute("type", "button");
-        list.setAttribute("class", "col-1 btn btn-dark");
+        list.setAttribute("class", "col-1 btn btn-dark letter");
         list.id = 'letter';
         list.innerHTML = alphabet[i].toUpperCase();
         myButtons.appendChild(letters);
         letters.appendChild(list);
     }
+    alpo = document.getElementsByClassName('letter');
+    for (i = 0; i <alpo.length;i++){
+    alpo[i].addEventListener("click", function () {
+    guessed = this.innerHTML;
+    
+});
+}
 };
 
+buttons();
 //Assign events to level buttons
 document.getElementById("bas").addEventListener("click", function () {
-    wordsList = gradeBasic;
+    level = this.id;
+    console.log(level);
+    chosenWord = gradeBasic[Math.floor(Math.random() * gradeBasic.length + 1)];
+    startGame();
+    checkLetters(guessed);
+    roundComplete();
+
 });
 
 document.getElementById("int").addEventListener("click", function () {
-    wordsList = gradeInter;
+    level = this.id;
+    console.log(level);
+    chosenWord = gradeInter[Math.floor(Math.random() * gradeInter.length + 1)];
+    startGame();
+    checkLetters(guessed);
+    roundComplete();
 });
 
 document.getElementById("adv").addEventListener("click", function () {
-    wordsList = gradeAdvan;
+    level = this.id;
+    console.log(level);
+    chosenWord = gradeAdvan[Math.floor(Math.random() * gradeAdvan.length + 1)];
+    startGame();
+    checkLetters(guessed);
+    roundComplete();
 });
-
-
-buttons();
-
 
 
 function startGame() {
     numGuesses = 10;
-    chosenWord = wordsList[Math.floor(Math.random() * wordsList.length)];
     lettersCorr = chosenWord.split("");
     numBlanks = lettersCorr.length;
-    console.log(chosenWord);
     curState = [];
     wrongGuesses = [];
     for (var i = 0; i < numBlanks; i++) {
@@ -126,17 +145,16 @@ function roundComplete() {
 }
 
 //Main Process
-startGame();
+
 
 // Then initiates the function for capturing key clicks.
-document.onclick = function(event) {
+document.onclick = function (event) {
 
-  // Converts all key clicks to lowercase letters.
-  letterGuessed = String.fromCharCode(event.which).toLowerCase();
+    // Converts all key clicks to lowercase letters.
+    guessed = String.fromCharCode(event.which).toLowerCase();
 
-  // Runs the code to check for correct guesses.
-  checkLetters(letterGuessed);
+    // Runs the code to check for correct guesses.
+    
+    // Runs the code that ends each round.
 
-  // Runs the code that ends each round.
-  roundComplete();
 };

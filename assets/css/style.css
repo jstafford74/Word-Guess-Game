@@ -57,6 +57,12 @@ h1, h2, h3 {
       color:white;
     }
 
+    #scoreboard{
+      background-color:navajowhite;
+      color:black;
+      font-family: 'Lexend Tera', sans-serif;
+
+    }
 
 #my-word {
   margin: 0;
