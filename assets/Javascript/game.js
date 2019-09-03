@@ -38,12 +38,23 @@ var buttons = function () {
         letters.appendChild(list);
     }
     alpo = document.getElementsByClassName('letter');
-    for (i = 0; i <alpo.length;i++){
-    alpo[i].addEventListener("click", function () {
-    guessed = this.innerHTML;
-    
-});
-}
+    for (i = 0; i < alpo.length; i++) {
+        alpo[i].addEventListener("click", function () {
+            numGuesses--;
+            guessed = this.innerHTML.toLowerCase();
+            console.log(numGuesses);
+            if (guessed != "") {
+                checkLetters(guessed);
+                wrongGuesses.push(guessed.toUpperCase());
+                document.getElementById("guesses").innerHTML = wrongGuesses.join(" ");
+
+            }
+            roundComplete();
+
+
+
+        });
+    }
 };
 
 buttons();
@@ -52,9 +63,10 @@ document.getElementById("bas").addEventListener("click", function () {
     level = this.id;
     console.log(level);
     chosenWord = gradeBasic[Math.floor(Math.random() * gradeBasic.length + 1)];
+    console.log(chosenWord);
     startGame();
-    checkLetters(guessed);
-    roundComplete();
+
+
 
 });
 
@@ -63,8 +75,7 @@ document.getElementById("int").addEventListener("click", function () {
     console.log(level);
     chosenWord = gradeInter[Math.floor(Math.random() * gradeInter.length + 1)];
     startGame();
-    checkLetters(guessed);
-    roundComplete();
+
 });
 
 document.getElementById("adv").addEventListener("click", function () {
@@ -72,8 +83,7 @@ document.getElementById("adv").addEventListener("click", function () {
     console.log(level);
     chosenWord = gradeAdvan[Math.floor(Math.random() * gradeAdvan.length + 1)];
     startGame();
-    checkLetters(guessed);
-    roundComplete();
+
 });
 
 
@@ -86,7 +96,7 @@ function startGame() {
     for (var i = 0; i < numBlanks; i++) {
         curState.push("_");
     }
-    console.log(curState);
+
     document.getElementById("guesses-left").innerHTML = numGuesses;
     document.getElementById("hold").innerHTML = curState.join(" ");
     document.getElementById("guesses").innerHTML = wrongGuesses.join(" ");
@@ -105,12 +115,9 @@ function checkLetters(letter) {
             if (chosenWord[j] === letter) {
                 curState[j] = letter;
             }
+            document.getElementById("hold").innerHTML = curState.join(" ");
         }
-        console.log(curState);
-    }
-    else {
-        wrongGuesses.push(letter);
-        numGuesses--;
+
     }
 }
 
@@ -118,43 +125,22 @@ function roundComplete() {
     console.log("WinCount: " + winCounter + " | LossCount: " + lossCounter + " | Games: " + games);
     // HTML UPDATES
     document.getElementById("guesses-left").innerHTML = numGuesses;
-    document.getElementById("hold").innerHTML = curState.join(" ");
-    document.getElementById("guesses").innerHTML = wrongGuesses.join(" ");
     if (lettersCorr.toString() === curState.toString()) {
         winCounter++;
         games++;
         alert("You win!");
         document.getElementById("win-counter").innerHTML = winCounter;
         document.getElementById("games-played").innerHTML = games;
-        startGame();
-    }
 
-    // If we've run out of guesses
+    }
     else if (numGuesses === 0) {
         lossCounter++;
         games++;
-
-        // Give the user an alert
         alert("You lose");
-
-        // Update the loss counter in the HTML
         document.getElementById("loss-counter").innerHTML = lossCounter;
         document.getElementById("games-played").innerHTML = games;
-        startGame();
+
     }
 }
 
-//Main Process
 
-
-// Then initiates the function for capturing key clicks.
-document.onclick = function (event) {
-
-    // Converts all key clicks to lowercase letters.
-    guessed = String.fromCharCode(event.which).toLowerCase();
-
-    // Runs the code to check for correct guesses.
-    
-    // Runs the code that ends each round.
-
-};
