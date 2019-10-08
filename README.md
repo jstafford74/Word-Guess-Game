@@ -1,12 +1,15 @@
 # Word-Guess-Game
 
+## Deployed Link:
+### https://jstafford74.github.io/Word-Guess-Game/
+
 ### Overview
 
 Create Word Guess app that will run in the browser, and feature dynamically updated HTML and CSS powered by your JavaScript code.
 
 - [X]  Choose a theme for your game! In the demo, we picked an 80s theme: 80s questions, 80s sound and an 80s aesthetic. You can choose any subject for your theme, though, so be creative!
 
-- [ ] Use key events to listen for the letters that your players will type.
+- [X] Use key events to listen for the letters that your players will type.
 
 - [ ] Display the following on the page:
   * Press any key to get started!
